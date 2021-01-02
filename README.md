@@ -1,7 +1,7 @@
 # Key-Value Local DataStore #
 
 This Key-Value Local DataStore library is written in Java by **Kurt Kalwin**
-For license please check ![LICENSE] (LICENSE)
+For license please check [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/KurtKalwin/localDataStore/blob/main/LICENSE)
 
 ## Table of Contents ##
 =======================
