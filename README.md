@@ -35,6 +35,8 @@ jsonObject.put("userId", "user1");
 localStore.create("keyabc1", jsonObject); //create a key-value in data store
 JSONObject jsonFromDataStore = localStore.read("keyabc1"); //retrieve key from data store
 localStore.delete("keyabc1"); //delete key from data store
+
+localStore.create("keywithttl", jsonObject, 60) // create a key with TTL = 60 seconds
 ```
 
 You can also create data store with an optional path and size :
