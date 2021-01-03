@@ -7,6 +7,8 @@ For license please check [![license](https://img.shields.io/github/license/DAVFo
 
 [![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability)
+
 ## Table of Contents ##
 =======================
 * [Library Usage](#library-usage-)

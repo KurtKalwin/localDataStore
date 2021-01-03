@@ -39,24 +39,28 @@ class TTLEvictionService extends TimerTask {
     public void run() {
         try {
             ArrayList<String> evictedKeys = new ArrayList<>();
-            for (String key :
-                    evictionMap.keySet()) {
-                try {
-                    if (shouldEvictKey(key)) {
-                        fileStoreManager.deleteKey(key);
-                        evictedKeys.add(key);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            for (String key :
-                    evictedKeys) {
-                evictionMap.remove(key);
-            }
+            evictExpiredKeys(evictedKeys);
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+    private void evictExpiredKeys(ArrayList<String> evictedKeys) {
+        for (String key :
+                evictionMap.keySet()) {
+            try {
+                if (shouldEvictKey(key)) {
+                    fileStoreManager.deleteKey(key);
+                    evictedKeys.add(key);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (String key :
+                evictedKeys) {
+            evictionMap.remove(key);
         }
     }
 
