@@ -110,7 +110,7 @@ public class LocalStore implements KeyValueStore {
     private void validateKeyAndValue(String key, JSONObject value) throws InvalidKeyException,
             JSONSizeLimitExceededException {
         if (key == null) throw new InvalidKeyException("Key cannot be NULL");
-        if (key.length() > MAX_KEY_CHARS) throw new InvalidKeyException("Key cannot be more than %d chars".formatted(MAX_KEY_CHARS));
+        if (key.length() > MAX_KEY_CHARS) throw new InvalidKeyException("Key cannot be more than " + MAX_KEY_CHARS + " chars" );
         if (fileStoreManager.checkIfKeyExists(key)) throw new InvalidKeyException("Key already exists in DataStore");
         validateSizeofJsonObject(value);
     }

@@ -156,7 +156,7 @@ class FileStoreManager {
     }
 
     private String createKeyStore(String key) throws IOException, InvalidKeyException {
-        String keyStorePath = "%s/%s".formatted(getDataStorePath(), key);
+        String keyStorePath = getDataStorePath() + "/" + key;
         File dataStorePath = new File(keyStorePath);
         if (dataStorePath.exists()) {
             throw new InvalidKeyException("Given key already present in datastore");
