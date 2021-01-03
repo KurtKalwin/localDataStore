@@ -5,6 +5,8 @@ For license please check [![license](https://img.shields.io/github/license/DAVFo
 
 [![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=cibadges)](https://travis-ci.com/KurtKalwin/localDataStore)
 
+[![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges)
+
 ## Table of Contents ##
 =======================
 * [Library Usage](#library-usage-)
