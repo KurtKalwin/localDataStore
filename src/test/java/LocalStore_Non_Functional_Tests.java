@@ -165,7 +165,7 @@ public class LocalStore_Non_Functional_Tests {
     }
 
     @Test
-    public void load_testing_create_read_delete_1000_keys_parallel_threads() throws InterruptedException, IOException, JSONSizeLimitExceededException, InvalidKeyException, LocalStorageSizeExceededException {
+    public void load_testing_create_read_delete_100_keys_parallel_threads() throws InterruptedException, IOException, JSONSizeLimitExceededException, InvalidKeyException, LocalStorageSizeExceededException {
         KeyValueStore keyValueStore = new LocalStore("/tmp/loadtesting");
 
         JSONObject sampleObj = getSampleJsonObject();
@@ -200,17 +200,17 @@ public class LocalStore_Non_Functional_Tests {
     private void createKeys(KeyValueStore keyValueStore, int numberOfKeys) throws JSONSizeLimitExceededException, LocalStorageSizeExceededException, InvalidKeyException, IOException {
         for (int i = 0; i < numberOfKeys; i++) {
             JSONObject jsonObject = getSampleJsonObject();
-            keyValueStore.create("key_%d".formatted(i), jsonObject);
+            keyValueStore.create("key_" + i, jsonObject);
         }
     }
 
     private void readKeys(KeyValueStore keyValueStore, int delay, int numberOfKeys) throws InvalidKeyException, IOException, InterruptedException {
         Thread.sleep(delay);
-        for (int i = 0; i < numberOfKeys; i++) Assertions.assertNotNull(keyValueStore.read("key_%d".formatted(i)));
+        for (int i = 0; i < numberOfKeys; i++) Assertions.assertNotNull(keyValueStore.read("key_" + i));
     }
 
     private void deleteKeys(KeyValueStore keyValueStore, int delay, int numberOfKeys) throws InterruptedException, InvalidKeyException, IOException {
         Thread.sleep(delay);
-        for (int i = 0; i < numberOfKeys; i++) keyValueStore.delete("key_%d".formatted(i));
+        for (int i = 0; i < numberOfKeys; i++) keyValueStore.delete("key_" + i);
     }
 }

@@ -1,5 +1,11 @@
 plugins {
     id 'java'
+    id 'java-gradle-plugin'
+    id 'maven'
+    id 'jacoco'
+    id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '0.10.0'
+    id 'com.github.kt3k.coveralls' version '2.8.2'
 }
 
 group 'org.localstorage'
@@ -20,4 +26,20 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+    sourceSets sourceSets.main
+
+    reports {
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
 }
