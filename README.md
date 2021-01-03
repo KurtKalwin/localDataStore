@@ -11,7 +11,7 @@ Continuous Integration Status :
 
 ## Table of Contents ##
 =======================
-* [The CHALLENGE]
+* [The CHALLENGE](#the-challenge)
 * [Library Usage](#library-usage-)
 * [Design Approach](#design-approach-)
   * [Handling complexity in Inter-thread and Inter-process locks](#handling-complexity-in-inter-thread-and-inter-process-locks)
