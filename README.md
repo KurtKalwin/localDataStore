@@ -3,27 +3,27 @@
 This Key-Value Local DataStore library is written in Java by **Kurt Kalwin**
 For license please check [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/KurtKalwin/localDataStore/blob/main/LICENSE)
 
-[![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=cibadges)](https://travis-ci.com/KurtKalwin/localDataStore)
+Continuous Integration Status :
 
-[![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability)
+| Branch        | Build           | Coverage           | Maintainability           | Security |
+| ------------- |:---------------:|:------------------:|:-------------------------:|:--------:|
+| master      | [![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=cibadges)](https://travis-ci.com/KurtKalwin/localDataStore) | [![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges) | [![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability) | [![Known Vulnerabilities](https://snyk.io/test/github/kurtkalwin/localdatastore/badge.svg)](https://snyk.io/test/github/kurtkalwin/localdatastore) |
 
 ## Table of Contents ##
 =======================
 * [Library Usage](#library-usage-)
 * [Design Approach](#design-approach-)
+  * [Handling complexity in Inter-thread and Inter-process locks](#handling-complexity-in-inter-thread-and-inter-process-locks)
   * [Class Diagram](#class-diagram)
   * [Sequence Diagram for create API](#sequence-diagram-for-create-api)
   * [Sequence Diagram for read API](#sequence-diagram-for-read-api)
   * [Sequence Diagram for delete API](#sequence-diagram-for-delete-api)
-  * [Handling complexity in Inter-thread and Inter-process locks](#handling-complexity-in-inter-thread-and-inter-process-locks)
   * [Error Handling](#error-handling)
 * [Clean Code and TDD Approach](#clean-code-and-tdd-approach-)
   * [Code Coverage](#code-coverage)
   * [Functional and Non-Functional Test results](#functional-and-non-functional-test-results)
   * [Performance Test Result](#performance-test-result)
-* [Build and Dependencies](#build-and-dependencies)
+* [Tools, Build and Dependencies](#build-and-dependencies)
 
 ## Library usage : ##
 
@@ -62,6 +62,15 @@ folders.:star:
 
 ![Key Value stored in a folder / file hierarchy ](/images/datastore_hierarchy.png?raw=true)
 
+### Handling complexity in Inter-thread and Inter-process locks ###
+
+* For **inter-thread** file locking create, read and delete methods are marked as synchronized.
+* For **inter-process** FileChannel.tryLock() with retry mechanism is used for CRD operations.
+
+Just using synchronization will not have any effect on threads running on a different JVM.
+Hence, FileChannel.trylock() is used to acquire a lock on file that prevents another process from getting a
+lock on it. :+1:
+
 ### Class Diagram 
 
 ![Class Diagram](/images/datastore_classdiagram.png?raw=true "Class Diagram")
@@ -84,16 +93,6 @@ folders.:star:
 ![Sequence Diagram for read API](/images/sequence_read.png?raw=true "Sequence Diagram for read API")
 ### Sequence Diagram for delete API ###
 ![Sequence Diagram for delete API](/images/sequence_delete.png?raw=true "Sequence Diagram for delete API")
-
-
-### Handling complexity in Inter-thread and Inter-process locks ###
-
-* For **inter-thread** file locking create, read and delete methods are marked as synchronized. 
-* For **inter-process** FileChannel.tryLock() with retry mechanism is used for CRD operations.
-
-Just using synchronization will not have any effect on threads running on a different JVM. 
-Hence, FileChannel.trylock() is used to acquire a lock on file that prevents another process from getting a 
-lock on it. :+1:
 
 ### Error Handling ###
 Appropriate error responses are thrown as exceptions if data store is used in unexpected ways
@@ -133,11 +132,15 @@ Performance and Load tests are covered as part of JUnit tests and below are thos
 
 * multiple_threads_create_read_delete_in_parallel
 * multiple_threads_create_read_delete_in_parallel_without_delay_for_read_and_delete_expect_InvalidKeyException
-* load_testing_create_read_delete_1000_keys_parallel_threads
+* load_testing_create_read_delete_100_keys_parallel_threads
 
-Performance test results for creating, reading and deleting 1000 keys is posted in this image :
+Performance test results for creating, reading and deleting 100 keys is posted in this image :
 ![Performance Test Results](/images/performance_results.png?raw=true)
 
 ## Build and Dependencies ##
-Gradle is the build automation tool for this project.
-build.gradle file shows the dependencies used for this project.
+* IntelliJ community edition used as IDE
+* Gradle is the build automation tool for this project. build.gradle file shows the dependencies used for this project.
+* Travis CI used for continuous integration builds
+* codecov.io used for code coverage
+* code climate used for measuring code quality 
+* synk.io used for security vulnerability assessment

@@ -165,7 +165,7 @@ public class LocalStore_Non_Functional_Tests {
     }
 
     @Test
-    public void load_testing_create_read_delete_1000_keys_parallel_threads() throws InterruptedException, IOException, JSONSizeLimitExceededException, InvalidKeyException, LocalStorageSizeExceededException {
+    public void load_testing_create_read_delete_100_keys_parallel_threads() throws InterruptedException, IOException, JSONSizeLimitExceededException, InvalidKeyException, LocalStorageSizeExceededException {
         KeyValueStore keyValueStore = new LocalStore("/tmp/loadtesting");
 
         JSONObject sampleObj = getSampleJsonObject();
