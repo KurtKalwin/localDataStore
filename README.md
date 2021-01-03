@@ -27,7 +27,7 @@ Continuous Integration Status :
 * [Tools, Build and Dependencies](#build-and-dependencies)
 
 ## The CHALLENGE ##
-![Click here to see the challenge](/images/requirement.png?raw=true "The Challenge")
+![Click here to see the challenge](/images/requirements.png?raw=true "The Challenge")
 
 ## Library usage : ##
 
