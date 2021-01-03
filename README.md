@@ -60,7 +60,7 @@ best performance for storing and retrieving data from key-value store.
 This design prevents locking issues on a single file as different values are stored under respective "Key" 
 folders.:star:
 
-![Key Value stored in a folder / file hierarchy ](/images/datastore_hierarchy.png?raw=true)
+![Key Value stored in a folder / file hierarchy ](/images/datastore_hierarchy1.png?raw=true)
 
 ### Handling complexity in Inter-thread and Inter-process locks ###
 
