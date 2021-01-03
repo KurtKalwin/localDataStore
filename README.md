@@ -7,7 +7,7 @@ Continuous Integration Status :
 
 | Branch        | Build           | Coverage           | Maintainability           | Security |
 | ------------- |:---------------:|:------------------:|:-------------------------:|:--------:|
-| master      | [![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=main)](https://travis-ci.com/KurtKalwin/localDataStore) | [![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/main/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/main) | [![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability) | [![Known Vulnerabilities](https://snyk.io/test/github/kurtkalwin/localdatastore/badge.svg)](https://snyk.io/test/github/kurtkalwin/localdatastore) |
+| main      | [![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=main)](https://travis-ci.com/KurtKalwin/localDataStore) | [![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/main/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/main) | [![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability) | [![Known Vulnerabilities](https://snyk.io/test/github/kurtkalwin/localdatastore/badge.svg)](https://snyk.io/test/github/kurtkalwin/localdatastore) |
 
 ## Table of Contents ##
 =======================
