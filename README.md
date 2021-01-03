@@ -3,6 +3,8 @@
 This Key-Value Local DataStore library is written in Java by **Kurt Kalwin**
 For license please check [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/KurtKalwin/localDataStore/blob/main/LICENSE)
 
+[![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=cibadges)](https://travis-ci.com/KurtKalwin/localDataStore)
+
 ## Table of Contents ##
 =======================
 * [Library Usage](#library-usage-)
