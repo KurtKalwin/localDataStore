@@ -24,6 +24,7 @@ public interface KeyValueStore {
      * @throws InvalidKeyException               - Gets thrown when key is more than 32 chars or null
      * @throws JSONSizeLimitExceededException    - Gets thrown when JSON object exceeds 64kb
      * @throws LocalStorageSizeExceededException - Gets thrown when data store size exceeds 1 GB
+     * @throws IOException - Gets thrown if File cannot be created due to File lock issues
      */
     void create(String key, JSONObject value) throws JSONSizeLimitExceededException, LocalStorageSizeExceededException, InvalidKeyException, IOException;
 
@@ -35,6 +36,7 @@ public interface KeyValueStore {
      * @throws InvalidKeyException               - Gets thrown when key is more than 32 chars or null
      * @throws JSONSizeLimitExceededException    - Gets thrown when JSON object exceeds 64kb
      * @throws LocalStorageSizeExceededException - Gets thrown when data store size exceeds 1 GB
+     * @throws IOException - Gets thrown if File cannot be created due to File lock issues
      */
     void create(String key, JSONObject value, int timeToLive) throws IOException, LocalStorageSizeExceededException, JSONSizeLimitExceededException, InvalidKeyException;
 
@@ -42,12 +44,14 @@ public interface KeyValueStore {
      * @param key - Key for retrieving data from store
      * @return - JSON Object retrieved from key
      * @throws InvalidKeyException - Gets thrown when invalid key is specified to access data store
+     * @throws IOException - Gets thrown if File cannot be created due to File lock issues
      */
     JSONObject read(String key) throws InvalidKeyException, IOException, InterruptedException;
 
     /**
      * @param key - Key for deleting data from store
      * @throws InvalidKeyException - Gets thrown when invalid key is specified to access data store
+     * @throws IOException - Gets thrown if File cannot be created due to File lock issues
      */
     void delete(String key) throws InvalidKeyException, IOException;
 }
