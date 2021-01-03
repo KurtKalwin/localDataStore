@@ -11,6 +11,7 @@ Continuous Integration Status :
 
 ## Table of Contents ##
 =======================
+* [The CHALLENGE]
 * [Library Usage](#library-usage-)
 * [Design Approach](#design-approach-)
   * [Handling complexity in Inter-thread and Inter-process locks](#handling-complexity-in-inter-thread-and-inter-process-locks)
@@ -24,6 +25,9 @@ Continuous Integration Status :
   * [Functional and Non-Functional Test results](#functional-and-non-functional-test-results)
   * [Performance Test Result](#performance-test-result)
 * [Tools, Build and Dependencies](#build-and-dependencies)
+
+## The CHALLENGE ##
+![Click here to see the challenge](/images/requirement.png?raw=true "The Challenge")
 
 ## Library usage : ##
 
