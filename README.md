@@ -1,13 +1,13 @@
 # Key-Value Local DataStore #
 
-This Key-Value Local DataStore library is written in Java by **Kurt Kalwin**
+This Key-Value Local DataStore library is written in Java by **Kurt Kalwin** , 
 For license please check [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/KurtKalwin/localDataStore/blob/main/LICENSE)
 
 Continuous Integration Status :
 
 | Branch        | Build           | Coverage           | Maintainability           | Security |
 | ------------- |:---------------:|:------------------:|:-------------------------:|:--------:|
-| master      | [![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=cibadges)](https://travis-ci.com/KurtKalwin/localDataStore) | [![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/cibadges) | [![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability) | [![Known Vulnerabilities](https://snyk.io/test/github/kurtkalwin/localdatastore/badge.svg)](https://snyk.io/test/github/kurtkalwin/localdatastore) |
+| master      | [![Build Status](https://travis-ci.com/KurtKalwin/localDataStore.svg?branch=main)](https://travis-ci.com/KurtKalwin/localDataStore) | [![codecov](https://codecov.io/gh/KurtKalwin/localDataStore/branch/main/graph/badge.svg)](https://codecov.io/gh/KurtKalwin/localDataStore/branch/main) | [![Maintainability](https://api.codeclimate.com/v1/badges/498b9d67fca40a1e0bba/maintainability)](https://codeclimate.com/github/KurtKalwin/localDataStore/maintainability) | [![Known Vulnerabilities](https://snyk.io/test/github/kurtkalwin/localdatastore/badge.svg)](https://snyk.io/test/github/kurtkalwin/localdatastore) |
 
 ## Table of Contents ##
 =======================
@@ -135,6 +135,8 @@ Performance and Load tests are covered as part of JUnit tests and below are thos
 * load_testing_create_read_delete_100_keys_parallel_threads
 
 Performance test results for creating, reading and deleting 100 keys is posted in this image :
+
+![Performance Test Results](/images/perf_load.png?raw=true)
 ![Performance Test Results](/images/performance_results.png?raw=true)
 
 ## Build and Dependencies ##
