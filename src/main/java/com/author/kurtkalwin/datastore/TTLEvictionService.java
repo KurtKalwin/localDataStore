@@ -58,6 +58,10 @@ class TTLEvictionService extends TimerTask {
             }
         }
 
+        refreshEvictionMap(evictedKeys);
+    }
+
+    private void refreshEvictionMap(ArrayList<String> evictedKeys) {
         for (String key :
                 evictedKeys) {
             evictionMap.remove(key);
